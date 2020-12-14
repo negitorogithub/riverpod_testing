@@ -6,6 +6,6 @@ part 'FooState.freezed.dart';
 @freezed
 abstract class FooState with _$FooState {
   factory FooState({
-    @Default(0) int fooCount,
+    @Default(0) int count,
   }) = _Create;
 }

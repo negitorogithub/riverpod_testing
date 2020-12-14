@@ -14,9 +14,9 @@ class _$FooStateTearOff {
   const _$FooStateTearOff();
 
 // ignore: unused_element
-  _Create call({int fooCount = 0}) {
+  _Create call({int count = 0}) {
     return _Create(
-      fooCount: fooCount,
+      count: count,
     );
   }
 }
@@ -27,7 +27,7 @@ const $FooState = _$FooStateTearOff();
 
 /// @nodoc
 mixin _$FooState {
-  int get fooCount;
+  int get count;
 
   $FooStateCopyWith<FooState> get copyWith;
 }
@@ -36,7 +36,7 @@ mixin _$FooState {
 abstract class $FooStateCopyWith<$Res> {
   factory $FooStateCopyWith(FooState value, $Res Function(FooState) then) =
       _$FooStateCopyWithImpl<$Res>;
-  $Res call({int fooCount});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -49,10 +49,10 @@ class _$FooStateCopyWithImpl<$Res> implements $FooStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object fooCount = freezed,
+    Object count = freezed,
   }) {
     return _then(_value.copyWith(
-      fooCount: fooCount == freezed ? _value.fooCount : fooCount as int,
+      count: count == freezed ? _value.count : count as int,
     ));
   }
 }
@@ -62,7 +62,7 @@ abstract class _$CreateCopyWith<$Res> implements $FooStateCopyWith<$Res> {
   factory _$CreateCopyWith(_Create value, $Res Function(_Create) then) =
       __$CreateCopyWithImpl<$Res>;
   @override
-  $Res call({int fooCount});
+  $Res call({int count});
 }
 
 /// @nodoc
@@ -76,25 +76,25 @@ class __$CreateCopyWithImpl<$Res> extends _$FooStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object fooCount = freezed,
+    Object count = freezed,
   }) {
     return _then(_Create(
-      fooCount: fooCount == freezed ? _value.fooCount : fooCount as int,
+      count: count == freezed ? _value.count : count as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_Create with DiagnosticableTreeMixin implements _Create {
-  _$_Create({this.fooCount = 0}) : assert(fooCount != null);
+  _$_Create({this.count = 0}) : assert(count != null);
 
   @JsonKey(defaultValue: 0)
   @override
-  final int fooCount;
+  final int count;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FooState(fooCount: $fooCount)';
+    return 'FooState(count: $count)';
   }
 
   @override
@@ -102,21 +102,20 @@ class _$_Create with DiagnosticableTreeMixin implements _Create {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'FooState'))
-      ..add(DiagnosticsProperty('fooCount', fooCount));
+      ..add(DiagnosticsProperty('count', count));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Create &&
-            (identical(other.fooCount, fooCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.fooCount, fooCount)));
+            (identical(other.count, count) ||
+                const DeepCollectionEquality().equals(other.count, count)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(fooCount);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
 
   @override
   _$CreateCopyWith<_Create> get copyWith =>
@@ -124,10 +123,10 @@ class _$_Create with DiagnosticableTreeMixin implements _Create {
 }
 
 abstract class _Create implements FooState {
-  factory _Create({int fooCount}) = _$_Create;
+  factory _Create({int count}) = _$_Create;
 
   @override
-  int get fooCount;
+  int get count;
   @override
   _$CreateCopyWith<_Create> get copyWith;
 }

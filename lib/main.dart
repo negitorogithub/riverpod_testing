@@ -8,13 +8,15 @@ void main() {
 }
 
 StateNotifierProvider myStateControllerProvider = StateNotifierProvider((ref) {
-  final a = ref.watch(fooStateControllerProvider.state);
-  print('watch: $a');
+  print('watch in myStateControllerProvider: ${ref.watch(fooStateControllerProvider.state)}');
   return MyStateController(ref: ref);
 });
 
-final fooStateControllerProvider =
-    StateNotifierProvider((ref) => FooStateController(ref: ref));
+Provider barProvider = Provider((ref) {
+  print('watch in barProvider: ${ref.watch(fooStateControllerProvider.state)}');
+});
+
+final fooStateControllerProvider = StateNotifierProvider((ref) => FooStateController());
 
 class MyApp extends StatelessWidget {
   @override
@@ -34,7 +36,11 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // initialize
     context.read(myStateControllerProvider);
+    context.read(barProvider);
+    context.read(fooStateControllerProvider);
+
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -47,10 +53,7 @@ class MyHomePage extends StatelessWidget {
           ),
           FlatButton(
             onPressed: () {
-              print(
-                  'myState: ${context.read(myStateControllerProvider.state)}');
-              print(
-                  'fooState: ${context.read(fooStateControllerProvider.state)}');
+              print('fooState: ${context.read(fooStateControllerProvider.state)}');
             },
             child: Text('printAll'),
           ),
