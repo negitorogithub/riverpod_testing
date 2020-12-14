@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/all.dart';
-import 'package:riverpod_testing/FooStateController.dart';
-import 'package:riverpod_testing/MyStateController.dart';
+import 'package:riverpod_testing/BazStateController.dart';
+import 'package:riverpod_testing/CounterStateController.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-StateNotifierProvider myStateControllerProvider = StateNotifierProvider((ref) {
-  print('watch in myStateControllerProvider: ${ref.watch(fooStateControllerProvider.state)}');
-  return MyStateController(ref: ref);
+final counterStateControllerProvider = StateNotifierProvider((ref) => CounterStateController());
+
+StateNotifierProvider bazStateControllerProvider = StateNotifierProvider((ref) {
+  print('watch in myStateControllerProvider: ${ref.watch(counterStateControllerProvider.state)}');
+  return BazStateController(ref: ref);
 });
 
 Provider barProvider = Provider((ref) {
-  print('watch in barProvider: ${ref.watch(fooStateControllerProvider.state)}');
+  print('watch in barProvider: ${ref.watch(counterStateControllerProvider.state)}');
 });
-
-final fooStateControllerProvider = StateNotifierProvider((ref) => FooStateController());
 
 class MyApp extends StatelessWidget {
   @override
@@ -37,9 +37,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // initialize
-    context.read(myStateControllerProvider);
+    context.read(bazStateControllerProvider);
     context.read(barProvider);
-    context.read(fooStateControllerProvider);
+    context.read(counterStateControllerProvider);
 
     return Scaffold(
       appBar: AppBar(),
@@ -47,13 +47,13 @@ class MyHomePage extends StatelessWidget {
         children: [
           FlatButton(
             onPressed: () {
-              context.read(fooStateControllerProvider).inc();
+              context.read(counterStateControllerProvider).inc();
             },
             child: Text('incincinc'),
           ),
           FlatButton(
             onPressed: () {
-              print('fooState: ${context.read(fooStateControllerProvider.state)}');
+              print('counterState: ${context.read(counterStateControllerProvider.state)}');
             },
             child: Text('printAll'),
           ),

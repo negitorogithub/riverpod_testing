@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/all.dart';
 import 'package:state_notifier/state_notifier.dart';
 
-import 'FooState.dart';
+import 'CounterState.dart';
 
-class FooStateController extends StateNotifier<FooState> {
-  FooStateController() : super(FooState());
+class CounterStateController extends StateNotifier<CounterState> {
+  CounterStateController() : super(CounterState());
 
   void inc() {
     state = state.copyWith.call(count: state.count + 1);

@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'MyState.freezed.dart';
+part 'BazState.freezed.dart';
 
 @freezed
-abstract class MyState with _$MyState {
-  factory MyState() = _Create;
+abstract class BazState with _$BazState {
+  factory BazState() = _Create;
 }

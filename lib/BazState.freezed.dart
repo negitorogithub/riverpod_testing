@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'MyState.dart';
+part of 'BazState.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'MyState.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$MyStateTearOff {
-  const _$MyStateTearOff();
+class _$BazStateTearOff {
+  const _$BazStateTearOff();
 
 // ignore: unused_element
   _Create call() {
@@ -21,24 +21,24 @@ class _$MyStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $MyState = _$MyStateTearOff();
+const $BazState = _$BazStateTearOff();
 
 /// @nodoc
-mixin _$MyState {}
+mixin _$BazState {}
 
 /// @nodoc
-abstract class $MyStateCopyWith<$Res> {
-  factory $MyStateCopyWith(MyState value, $Res Function(MyState) then) =
-      _$MyStateCopyWithImpl<$Res>;
+abstract class $BazStateCopyWith<$Res> {
+  factory $BazStateCopyWith(BazState value, $Res Function(BazState) then) =
+      _$BazStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MyStateCopyWithImpl<$Res> implements $MyStateCopyWith<$Res> {
-  _$MyStateCopyWithImpl(this._value, this._then);
+class _$BazStateCopyWithImpl<$Res> implements $BazStateCopyWith<$Res> {
+  _$BazStateCopyWithImpl(this._value, this._then);
 
-  final MyState _value;
+  final BazState _value;
   // ignore: unused_field
-  final $Res Function(MyState) _then;
+  final $Res Function(BazState) _then;
 }
 
 /// @nodoc
@@ -48,7 +48,7 @@ abstract class _$CreateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CreateCopyWithImpl<$Res> extends _$MyStateCopyWithImpl<$Res>
+class __$CreateCopyWithImpl<$Res> extends _$BazStateCopyWithImpl<$Res>
     implements _$CreateCopyWith<$Res> {
   __$CreateCopyWithImpl(_Create _value, $Res Function(_Create) _then)
       : super(_value, (v) => _then(v as _Create));
@@ -63,13 +63,13 @@ class _$_Create with DiagnosticableTreeMixin implements _Create {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MyState()';
+    return 'BazState()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'MyState'));
+    properties..add(DiagnosticsProperty('type', 'BazState'));
   }
 
   @override
@@ -81,6 +81,6 @@ class _$_Create with DiagnosticableTreeMixin implements _Create {
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class _Create implements MyState {
+abstract class _Create implements BazState {
   factory _Create() = _$_Create;
 }
